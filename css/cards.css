@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+    background-color: black;
+}
+
+#main {
+	display: none;
+    position: absolute; /*Can also be `fixed`*/
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 70%;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+h1, h2 {
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 80px;
+    line-height: 1.15em;
+}
+
+#refresh-area {
+    margin-top: 50px;
+}
+
+#refresh-button {
+
+}
+
+.category-nav {
+    background-color: inherit;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.category-nav .nav-item {
+    display: inline-block;
+    padding: 30px 40px;
+    font-size: 30px;
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 400;
+}
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

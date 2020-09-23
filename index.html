@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital Prompts</title>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" rel="stylesheet">
+    <link href="css/cards.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <script defer src="https://apis.google.com/js/api.js"></script>
+  </head>
+  <body onload="handleClientLoad();">
+
+<!-- this navigation isn't used without signin, but could be turned on to display auth buttons
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://localhost">
+          <img src="images/logo.png" width="88" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <button id="authorize_button" class="button" style="display: none;">Sign In</button>
+              <button id="signout_button" class="button" style="display: none;">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+-->
+
+    <main id="main">
+      <section id="prompt-area">
+      <!-- prompt text added programmatically -->
+      <h2 id="category" class="content is-dark" style="display: none;"></h2>
+      <h1 id="prompt" class="content is-dark"></h1>
+    </section>
+    <section id="refresh-area">
+      <button id="refresh-button" class="button is-large is-black is-outlined" onclick="window.location.reload();">New Prompt</button>
+    </section>
+    </main>
+
+    <footer>
+      <nav id="categories" class="category-nav navbar">
+          <!-- category navigation added programmatically -->
+      </nav>      
+    </footer>
+
+    <script type="text/javascript" src="js/getprompt.js"></script>
+    <script>
+      /*
+       * Add event listener to toggle navbar burger when present
+       */
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

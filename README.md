@@ -2,7 +2,7 @@
 Digital prompt cards backed by content from a Google spreadsheet
 
 ## Creating and updating your spreadsheet
-The **digital-prompts** code expects a Google spreadsheet identified by a unique Google document ID.
+The **digital-prompts** code expects a Google spreadsheet identified by a unique Google document ID. The current implementation assumes the sheet permissions are set to allow reading by anyone who has the link (no Google login required).
 
 ### Spreadsheet format
 The current implementation is hardcoded to expect two sheets within the Google spreadsheet.
